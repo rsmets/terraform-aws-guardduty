@@ -27,3 +27,18 @@ variable "sns_email_arn" {
   type        = string
   default     = ""
 }
+
+variable "enable_detector" {
+  description = "Enable GuardDuty Member Detector"
+  default     = true
+}
+
+variable "create_invite_accepter" {
+  description = "Create GuardDuty Member Invite Accepter. Not needed if already setup as part of an organization"
+  default     = true
+}
+
+variable "member_detector_id" {
+  description = "GuardDuty Detector ID for member account. Only needed if enable_detector is false. Used for targeting any previously enable detector"
+  default    = ""
+}
